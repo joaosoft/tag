@@ -11,6 +11,10 @@ func Load(obj interface{}, tags ...string) Values {
 }
 
 func load(obj reflect.Value, values Values, tags ...string) {
+	if !obj.IsValid() {
+		return
+	}
+
 	typ, value := getValue(obj)
 
 	switch value.Kind() {

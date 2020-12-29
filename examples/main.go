@@ -33,13 +33,22 @@ func main() {
 		},
 	}
 
+	// load person
 	values := tag.Load(person, "person", "book")
 	fmt.Println("Person:")
 	for key, value := range values {
 		fmt.Printf("Key: %s, Value: %+v\n", key, value)
 	}
 
+	// load address
 	values = tag.Load(person, "address")
+	fmt.Println("\nAddress:")
+	for key, value := range values {
+		fmt.Printf("Key: %s, Value: %+v\n", key, value)
+	}
+
+	// load nil value
+	values = tag.Load(nil, "address")
 	fmt.Println("\nAddress:")
 	for key, value := range values {
 		fmt.Printf("Key: %s, Value: %+v\n", key, value)
