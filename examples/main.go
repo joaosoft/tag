@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"tag"
+	"github.com/joaosoft/tag"
 )
 
 type (
